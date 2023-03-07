@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Color Palette</title>
+  <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <script src="js/vendor/angular.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" ng-app="PaletteApp" ng-controller="PaletteCtrl">
+      <div class="col-lg-9 col-md-8 col-sm-6 col-xs-12">
+        <h3>Palette</h3>
+        <hr>
+        <br>
+
+        <div id="color-palette" style="overflow: auto">
+          <div ng-show="showHint">
+            <h3>Nothing to show.</h3>
+
+            <p>Enter the number of colors to generate &amp; click <strong>Submit.</strong></p>
+          </div>
+
+          <div class="color-sample" ng-repeat="color in colorArray"
+          ng-style="getStyles(color)" ng-click="colorSelected(color)"></div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <h3>Config Panel</h3>
+        <hr>
+        <form ng-submit="generate()">
+          <div class="form-group">
+            <input type="number" min={{countMin}} max={{countMax}} class="form-control" placeholder="# of colors"
+            ng-model="count">
+            <br>
+            <input type="submit" class="btn btn-primary"/>
+
+            <input type="reset" class="btn btn-danger" ng-click="resetPalette()"/>
+          </div>
+        </form>
+        <br>
+        <br>
+
+        <div>
+          <h3>Selected:</h3>
+          <hr>
+          <div id="selected-color"
+          ng-style="getStyles(selectedColor)"></div>
+          <br>
+
+          <p class="text-center"><strong>Hex: </strong>{{selectedColor}}</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

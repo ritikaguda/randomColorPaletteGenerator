@@ -1,0 +1,33 @@
+/**
+    Styles to fix palette height and set overflow to scroll
+*/
+#color-palette {
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+
+/**
+    Styles for color samples on the palette
+*/
+.color-sample {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin: 2px;
+    opacity: 0.8;
+}
+
+.color-sample:hover {
+    border: 2px solid #000;
+    opacity: 1;
+}
+
+/**
+    Styles for the selected color sample
+*/
+#selected-color {
+    height: 100px;
+    width: 100px;
+    outline: 2px solid black;
+    margin: auto;
+}
