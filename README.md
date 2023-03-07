@@ -7,7 +7,9 @@ Find the project requirements here: [Random color palette generator web app](htt
 Built with Angular JS
 
 ## Installation
-Instructions for other developers on how to install and run your code on their local environment.
+### Clone the code using the "git clone [url]" command
+### Then for atom open command prompt and enter the following command: browser-sync start --server --directory --files "**/*"
+### Then the local host website opens up.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
